@@ -1,7 +1,6 @@
 class CreatePrototypes < ActiveRecord::Migration
   def change
     create_table :prototypes do |t|
-      t.string :likes_count
       t.string :title
       t.string :catch_copy
       t.text   :concept

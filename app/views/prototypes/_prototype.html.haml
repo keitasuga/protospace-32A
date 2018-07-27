@@ -2,7 +2,8 @@
   .thumbnail
     = link_to image_tag(prototype.set_main_thumbnail), prototype_path(prototype)
     .dropdown-menu-location
-    = link_to 'edit','#', method: :get, class: 'btn'
+    -if user_signed_in? && current_user.id == prototype.user.id
+      = link_to 'edit', edit_prototype_path(prototype), method: :get, class: 'btn'
     .caption
       %h3
         = prototype.title

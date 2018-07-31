@@ -36,6 +36,18 @@
       %h4 Concept
       %p
         = @prototype.concept
+      %h4 Comments（#{@comments.count}）
+      -if @comments
+        -@comments.each do |comment|
+          %h5
+            =comment.user.name
+          %p
+            =comment.content
+      %h4 Write a comment
+      - if current_user
+        = form_tag("/prototypes/#{@prototype.id}/comments", method: :post) do
+          %textarea{:cols => "50", :name => "text", :placeholder => "コメントする", :rows => "2", class: "form-control"}
+          %input{:type => "submit", :value => "SENT", class: "btn-primary"}/
     .col-md-3
       %h4 Tag List
       %ul.proto-tag-list.list-inline

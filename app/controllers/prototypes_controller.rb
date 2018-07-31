@@ -35,6 +35,10 @@ class PrototypesController < ApplicationController
       end
   end
 
+  def delete
+
+  end
+
   private
 
   def set_prototype

@@ -18,6 +18,7 @@ gem 'carrierwave'
 gem 'rmagick'
 gem 'thin',group: :production
 gem 'rails_12factor',group: :production
+gem "font-awesome-rails"
 
 group :development, :test do
   gem 'byebug'

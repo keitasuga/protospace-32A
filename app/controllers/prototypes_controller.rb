@@ -35,8 +35,10 @@ class PrototypesController < ApplicationController
       end
   end
 
-  def delete
-
+  def destroy
+    prototype = Prototype.find(params[:id])
+    prototype.destroy
+    redirect_to :root
   end
 
   private

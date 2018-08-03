@@ -1,0 +1,12 @@
+- if prototype.like_user(current_user.id)
+  = link_to prototype_like_path(prototype, prototype.like_user(current_user)), method: :delete, class: 'heart-icon', remote: true do
+    .fa.fa-heart.fa-2x.heart-red
+    %span
+    = prototype.likes_count
+
+- else
+  = link_to prototype_likes_path(prototype), method: :post, class: 'empty-heart', remote: true do
+    .fa.fa-heart-o.fa-2x.heart-color
+    %span
+    = prototype.likes_count
+
